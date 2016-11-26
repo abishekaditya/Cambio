@@ -1,3 +1,12 @@
-Create and add groups
+create groups
+
+<%if flash[:error] %>
+    <%= flash[:error] %>
+<% end %>
+
+        <%= form_for @group, url: {action: 'create'} do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit "Submit" %>
+<% end %>
 
 <%= link_to "Home", root_path %>

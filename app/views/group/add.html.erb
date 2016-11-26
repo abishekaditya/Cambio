@@ -1,0 +1,13 @@
+add people to groups
+
+<%if flash[:error] %>
+    <%= flash[:error] %>
+<% end %>
+<%= form_tag '/group/add' do %>
+    User Name
+    <%= text_field_tag :username%>
+    Group Select
+    <%= collection_select :user, :group_id, Group.where(:admin => current_user.id), :id, :name  %>
+    <%= submit_tag "Submit"%>
+
+<% end %>
