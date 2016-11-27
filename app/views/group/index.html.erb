@@ -1,0 +1,9 @@
+
+<% @group.each_with_index do |g,i| %>
+<p>
+  <%= g.name %> =>
+  <% @user[i].each do |j| %>
+      <%= j.username %>
+  <%end%>
+</p>
+<% end %>

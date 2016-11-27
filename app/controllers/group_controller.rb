@@ -22,6 +22,20 @@ class GroupController < ApplicationController
     @admin = UserGroup.create(:user_id => current_user.id, :group_id => @group.id)
   end
 
+  def index
+    @ug = UserGroup.joins(:group).where(:user_id => current_user.id).select(:group_id)
+    @group = Group.where(:id => @ug).order(:id)
+
+    @user = Array.new
+
+    @ug.each do |x|
+      @ne = UserGroup.joins(:user).where(:group_id => x.group_id).select(:user_id)
+      @user << User.where(:id => @ne).order(:id)
+    end
+
+
+  end
+
   def add
     @mygroups = Group.where(:admin => current_user.id)
     @usergroup = UserGroup.new

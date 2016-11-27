@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   post '/group/new' => 'group#create'
   get '/group/add' => 'group#add'
   post '/group/add' => 'group#adder'
+  get '/group/index' => 'group#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
