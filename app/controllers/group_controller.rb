@@ -90,7 +90,6 @@ class GroupController < ApplicationController
 
   @group_account = GroupAccount.where(group_id: params[:id]).first
   @matrix = YAML.load(@group_account.matrix)
-byebug
   end
 
 
