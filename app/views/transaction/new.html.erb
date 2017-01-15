@@ -1,0 +1,14 @@
+<h1>Transaction#new</h1>
+<p>Find me in app/views/transaction/new.html.erb</p>
+<% @id = Group.where(id: params[:id]).first.id %>
+group : <%= Group.where(id: params[:id]).first.name %><br/>
+from : <%= current_user.id %><br/>
+<%= form_tag '/transaction/transact' do %>
+    Amount
+    <%= hidden_field_tag :id, @id %>
+    <%= text_field_tag :amount%>
+    <br/> to:
+    <%= collection_select :group_account, :to_id, @group.users.select{ |i| i.id != current_user.id }, :id, :name  %><br/>
+    <%= submit_tag "Submit"%>
+
+<% end %>

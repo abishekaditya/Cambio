@@ -1,0 +1,19 @@
+<!--<table>
+  <tr>
+    <th>*</th>
+    <% @group_members.each_with_index do |i,n| %>
+      <th>
+        <% @x << User.where(id: i.user_id).first.name %>
+        <%= @x[n] %>
+      </th>
+    <% end %>
+  </tr>
+  <% @member_count.times do |i|%>
+    <tr>
+      <td><%= @x[i] %></td>
+      <% @member_count.times do |i|%>
+        <td>ph</td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>-->

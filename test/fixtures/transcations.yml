@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  from: 1
+  to: 1
+  amt: 1.5
+
+two:
+  id: 1
+  from: 1
+  to: 1
+  amt: 1.5

@@ -1,7 +1,7 @@
-
+Hello
 <% @group.each_with_index do |g,i| %>
 <p>
-  <%= g.name %> =>
+  <%= g.name  %> {<%= g.id %>} =>
   <% @user[i].each do |j| %>
       <%= j.username %>
   <%end%>
