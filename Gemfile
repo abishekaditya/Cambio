@@ -27,6 +27,7 @@ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
+gem 'nmatrix'
 gem 'simple_form'
 gem 'binding_of_caller'
 # Use Capistrano for deployment

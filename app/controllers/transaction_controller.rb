@@ -1,5 +1,6 @@
 class TransactionController < ApplicationController
   before_action :user_authenticated!
+  require 'cambio'
 
   def show
   end
@@ -31,7 +32,15 @@ class TransactionController < ApplicationController
 
     @matrix[@mapper[@from]][@mapper[@to]] += @amount
 
-    @group_account.update(matrix: @matrix)
+    @nmatrix = NMatrix.new(@matrix.count,@matrix.flatten)
+
+    @min = Money.new(@nmatrix).answer
+
+
+
+    @group_account.update(matrix: @min)
+
+    byebug
 
     redirect_to root_path
 
