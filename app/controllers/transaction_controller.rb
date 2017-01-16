@@ -40,7 +40,6 @@ class TransactionController < ApplicationController
 
     @group_account.update(matrix: @min)
 
-    byebug
 
     redirect_to root_path
 
