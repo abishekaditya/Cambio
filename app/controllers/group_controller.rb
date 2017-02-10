@@ -3,7 +3,6 @@ class GroupController < ApplicationController
   def new
     @group = Group.new
     @usergroup =UserGroup.new
-
   end
 
   def create
@@ -33,8 +32,6 @@ class GroupController < ApplicationController
       @ne = UserGroup.joins(:user).where(:group_id => x.group_id).select(:user_id)
       @user << User.where(:id => @ne).order(:id)
     end
-
-
   end
 
   def add

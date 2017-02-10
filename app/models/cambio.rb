@@ -3,6 +3,7 @@
 require 'nmatrix'
 
 class Money
+  
   def initialize nmatrix
     @a = nmatrix
   end
@@ -34,7 +35,6 @@ class Money
     cr = minmat[0][len]
 
     if cr == 0
-
       if ul == br
         minmat[0][len] = ul
         minmat[1][len] = 0
@@ -48,7 +48,6 @@ class Money
         minmat[1][len] -= ul
         minmat[0][len-1] = 0
       end
-
     end
     minmat
   end
